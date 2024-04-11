@@ -14,11 +14,4 @@ session_start();
     <header>
         <?php require_once __DIR__ . '/nav.php'; ?>
     </header>
-    <?php
-    if (isset($_GET['error'])) {
-    $errorMsg = getErrorMessage(intval($_GET['error']));
-    require_once 'templates/error_notification.php';
-    
-}
-?>
     <main>

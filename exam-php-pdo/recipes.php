@@ -10,22 +10,22 @@
                 echo "Erreur lors de la connexion à la base de données";
                 exit;
             }
+
+
             try{
                 $req=$pdo->prepare('SELECT * FROM recipes');
                 $req->execute();
             }catch (PDOException $e) {
-         //   $req=$db->prepare('SELECT * FROM recipes');
-            //$req->execute();
             echo "dfghjk". $e->getMessage() ."dfghj";
-
         }
+        // Récupère la prochaine ligne et la retourne en tant qu'objet
             while($reponse=$req->fetch(PDO::FETCH_OBJ)){?>
             <div class="card" style="width: 18rem;">
         <img src="admin/upload/<?php echo $reponse->images?> " class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title"><?php echo $reponse->titre;?></h5>
-        <p class="card-text"><?php echo $reponse->description;?></p>
-        <a href="Plus.php?titre=<?php echo $reponse->titre; ?>&description=<?php echo substr($reponse->description, 0, 100);?>&images=<?php echo $reponse->images?>" class="btn btn-primary">Plus</a>
+        <p class="card-text"><?php echo substr($reponse->description,0,100);?></p>
+        <a href="Plus.php?titre=<?php echo $reponse->titre; ?>&description=<?php echo $reponse->description;?>&images=<?php echo $reponse->images?>" class="btn btn-primary">Plus</a>
         </div>
     </div>
             <?php }
