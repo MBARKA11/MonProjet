@@ -37,10 +37,10 @@ require_once __DIR__ .'/../layout/header.php';?>
                     if(!move_uploaded_file($tmp_file,$contenu_dir.$filename)) {
                     exit('impossible de copier le fichier');
                 }
-           $save_recipes = "INSERT INTO recipes (titre, `description`, images) VALUES (:recipeTitre, :recipeDescription, :recipeImage)";
+        $save_recipes = "INSERT INTO recipes (titre, `description`, images) VALUES (:recipeTitre, :recipeDescription, :recipeImage)";
             $stmt = $pdo->prepare($save_recipes);
             $stmt->execute(['recipeTitre' => $_POST['titre'],
-                           'recipeDescription'=> $description,
+                        'recipeDescription'=> $description,
                             'recipeImage'=>$filename]);
                         echo "Opération reussie";}
                         catch(PDOException $e) {
