@@ -1,4 +1,5 @@
 <?php require_once __DIR__ .'/layout/header.php';?>
+<?php $title = "Page details";?>
 <div class="container"><br><br><br>
     
     <div class="recipe" style="display: flex; flex-wrap: wrap; align-content: space-around; justify-content: center;gap:2%;">
@@ -6,7 +7,7 @@
     <div class="card mb-3" style="max-width: 100%;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="admin/upload/<?php echo $_GET['images'] ?>" class="img-fluid rounded-start" alt="...">
+      <img src="admin/upload/<?php echo $_GET['images'] ?>" class="img-fluid rounded-start" alt="">
     </div>
     <div class="col-md-8">
       <div class="card-body">

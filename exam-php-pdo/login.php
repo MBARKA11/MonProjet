@@ -1,5 +1,5 @@
 <?php require_once __DIR__ .'/layout/header.php';?>
-
+<?php $title = "Page Login";?>
     <h1>Login</h1>
 <section class="container">
         <div class="form-control">

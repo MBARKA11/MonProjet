@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ .'/../layout/header.php';?>
-
+<?php $title = "Page admin";?>
 <div class="center">
     <h1>Admin</h1><br><br> 
     <?php
@@ -37,7 +37,8 @@ require_once __DIR__ .'/../layout/header.php';?>
                 }
         $save_recipes = "INSERT INTO recipes (titre, `description`, images) VALUES (:recipeTitre, :recipeDescription, :recipeImage)";
             $stmt = $pdo->prepare($save_recipes);
-            $stmt->execute(['recipeTitre' => $_POST['titre'],
+            $stmt->execute([
+                        'recipeTitre' => $_POST['titre'],
                         'recipeDescription'=> $description,
                             'recipeImage'=>$filename]);
                         echo "Opération reussie";}
@@ -49,7 +50,7 @@ require_once __DIR__ .'/../layout/header.php';?>
             <h3>ajouter une recette</h3>
         <form method="POST" action="" enctype="multipart/form-data">
             <input type="text" name="titre" placeholder="entrer le titre de la recette" required="" class="form form-control"><br>
-            <textarea name="description" placeholder="entrer la description de la recette"  class="form form-control">
+            <textarea name="description" placeholder="entrer la description de la recette" class="form form-control">
             </textarea><br>
             <input type="file" name="myFile"><br><br>
             <input type="submit" name="submit" class="btn btn-primary"><br>
