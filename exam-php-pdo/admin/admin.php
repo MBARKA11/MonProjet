@@ -10,7 +10,6 @@ require_once __DIR__ .'/../layout/header.php';?>
             require_once __DIR__ . '/../functions/db.php';
             if(isset($_POST['submit'])){
                 extract($_POST);
-              ///  $file = $_FILES['myFile'];
                 var_dump($_FILES['myFile']);
                 try {
                     $pdo = getConnection();
@@ -26,7 +25,7 @@ require_once __DIR__ .'/../layout/header.php';?>
                         exit('le fichier est introuvable');
                     }
             $type_file = $_FILES['myFile']['type'];
-                    //on verifie si l'image est à l'extension jpeg ou png
+                    //on verifie si l'image à l'extension jpeg ou png
                 if(!strstr($type_file,'jpeg') && !strstr($type_file,'png')){ 
                         exit("ce fichier n'est pas une image"); 
                     }

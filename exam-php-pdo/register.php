@@ -1,6 +1,7 @@
 <?php 
 require_once __DIR__ .'/layout/header.php';?>
-<?php $title = "Page d'inscription";?>
+<?php $title = "Page d'inscription";
+?>
     <h1>Form</h1>
     <section class="container">
         <div class="form-control">
@@ -23,7 +24,9 @@ require_once __DIR__ .'/layout/header.php';?>
 
                     </div>
                 
-                    <div><input type="submit" class="btn btn-primary" value="Envoyer" /></div>
+                    <div>
+                        <input type="submit" class="btn btn-primary" value="Envoyer" />
+                    </div>
             </form>
         <div>
     </section>

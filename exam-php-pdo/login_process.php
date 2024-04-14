@@ -18,10 +18,10 @@ if (empty($_POST)) {
 
 //On récupère toutes les infos du formulaire dans un tableau $_POST
 $email = $_POST['email'];
-$formPassword = $_POST['password'];
+$Password = $_POST['password'];
 
 //On vérifie si un des champs n'est pas vide
-if (empty($email) || empty($formPassword) == true) {
+if (empty($email) || empty($Password) == true) {
     redirect('login.php');
 }
 
@@ -40,7 +40,7 @@ if ($user === false) { // Pas de résultat
 }
 
 $passwordHash = $user['password'];
-$passwordOk = password_verify($formPassword, $passwordHash);
+$passwordOk = password_verify($Password, $passwordHash);
 
 if (!$passwordOk) {
     redirect('login.php'); // avec éventuellement un code d'erreur mot de passe incorrect...

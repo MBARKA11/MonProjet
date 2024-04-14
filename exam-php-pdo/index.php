@@ -1,4 +1,6 @@
 <?php
+session_start();
+var_dump($_SESSION);
 require_once __DIR__ . '/functions/db.php';
 
 try {
@@ -12,5 +14,5 @@ try {
 $stmt = $pdo->query("SELECT * FROM users");
 // À partir du Statement récupéré, je lis tous les résultats
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-var_dump($users);
+
 

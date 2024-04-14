@@ -5,13 +5,8 @@
     <div class="recipe" style="display: flex; flex-wrap: wrap; align-content: space-around; justify-content: center;gap:2%;">
         <?php
             require_once __DIR__ . '/functions/db.php';
-            try {
-                $pdo = getConnection();
-            } catch (PDOException) {
-                echo "Erreur lors de la connexion à la base de données";
-                exit;
-            }
-
+            $pdo = getConnection();
+            
             try{
                 $req=$pdo->prepare('SELECT * FROM recipes');
                 $req->execute();

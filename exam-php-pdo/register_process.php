@@ -23,12 +23,7 @@ $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
 $stmt->execute([$name, $firstname, $email, $hashedPassword]);
 
-//$_SESSION['message'] = 'vous êtes inscrit';
-header('Location:templates/registered.php');
-//}else{
-   $_SESSION['erreur'] = 'le formulaire est incomplet';
-   // header('Location:templates/error_register.php');
 
-//}
-//exit;
+header('Location:admin/admin.php?action=add_recipe');
+
 }

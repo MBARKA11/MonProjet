@@ -3,7 +3,7 @@
 <div class="container"><br><br><br>
     
     <div class="recipe" style="display: flex; flex-wrap: wrap; align-content: space-around; justify-content: center;gap:2%;">
-    <h1>Recette</h1><br><br>    
+    <h1>Details </h1><br><br>    
     <div class="card mb-3" style="max-width: 100%;">
   <div class="row g-0">
     <div class="col-md-4">
