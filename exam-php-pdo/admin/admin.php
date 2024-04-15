@@ -11,12 +11,13 @@ require_once __DIR__ .'/../layout/header.php';?>
             if(isset($_POST['submit'])){
                 extract($_POST);
                 var_dump($_FILES['myFile']);
-                try {
-                    $pdo = getConnection();
-                } catch (PDOException) {
-                    echo "Erreur lors de la connexion à la base de données";
-                    exit;
-                }
+               // try {
+                //    $pdo = getConnection();
+               // } catch (PDOException) {
+                   // echo "Erreur lors de la connexion à la base de données";
+                   // exit;
+               // }
+               $pdo = getConnection();
                 try{
             $contenu_dir =  'upload/';
                 //le dossier de destination tmp_file

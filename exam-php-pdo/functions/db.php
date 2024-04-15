@@ -1,12 +1,4 @@
 <?php
-
-/**
- * Charge la configuration de la base de données
- * (config/db.ini) pour créer une connexion à la BDD
- *
- * @return PDO
- * @throws PDOException si la connexion échoue
- */
 function getConnection(): PDO
 {
     // Chargement de la configuration
