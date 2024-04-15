@@ -24,7 +24,7 @@ $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 $stmt->execute([$name, $firstname, $email, $hashedPassword]);
 
 
-header('Location:admin/admin.php?action=add_recipe');
+//header('Location:admin/admin.php?action=add_recipe');
 
 require_once 'functions/email.php';
 require_once 'functions/error.php';
@@ -45,19 +45,17 @@ if (isSpam($email)) {
     redirect("templates/register_spam.php?error=" . EMAIL_SPAM);
 }
 $emailsFilePath = __DIR__ . '/register.php';
-// Vérifier qu'il n'existe pas déjà dans un fichier donné
 if (filesize($emailsFilePath) > 0){
     $emails = file($emailsFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     $isDuplicate = in_array($email, $emails);
 }else{
     $isDuplicate = false;
 }
-// S'il existe déjà, j'affiche un message d'erreur
+
 if($isDuplicate){
     redirect('templates/register_duplicate.php?error=' . EMAIL_DUPLICATE);
 }else{
-    // Sinon, j'enregistre l'email dans le fichier donné
-    redirect('index.php?success=1');
+    redirect('admin/admin.php?action=add_recipe');
 }
 
 }
